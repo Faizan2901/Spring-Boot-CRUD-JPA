@@ -54,5 +54,11 @@ public class StudentDAOImpl implements StudentDAO{
         entityManager.remove(student);
     }
 
+    @Override
+    @Transactional
+    public int deleteAll() {
+        return entityManager.createQuery("DELETE FROM Student",Student.class).executeUpdate();
+    }
+
 
 }

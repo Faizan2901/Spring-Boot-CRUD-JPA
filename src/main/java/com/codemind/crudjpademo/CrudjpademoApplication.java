@@ -22,8 +22,14 @@ public class CrudjpademoApplication {
 			saveStudent(studentDAO);
 //			findStudentByFN(studentDAO);
 //			readAllStudent(studentDAO);
-			deleteStudentByFirstName(studentDAO);
+//			deleteStudentByFirstName(studentDAO);
+//			deleteAllTheStudents(studentDAO);
 		};
+	}
+
+	private void deleteAllTheStudents(StudentDAO studentDAO) {
+		System.out.println("Deleting all the students: ");
+		System.out.println("Total "+studentDAO.deleteAll()+" Students are deleted");
 	}
 
 	private void deleteStudentByFirstName(StudentDAO studentDAO) {
@@ -53,8 +59,17 @@ public class CrudjpademoApplication {
 	private void saveStudent(StudentDAO studentDAO) {
 
 		System.out.println("Saving the first student: ");
-		Student myStudent=new Student("ABC","D","abc@codemind.com");
+		Student myStudent=new Student("Abdul Aziz","Jangiwala","abdulaziz@codemind.com");
+		Student myStudent1=new Student("Sakib","Singwala","sakib@codemind.com");
+		Student myStudent2=new Student("Ammar","Puthawala","ammar@codemind.com");
+		Student myStudent3=new Student("Fahil","Dheriwala","fahil@codemind.com");
 		studentDAO.save(myStudent);
+		studentDAO.save(myStudent1);
+		studentDAO.save(myStudent2);
+		studentDAO.save(myStudent3);
 		System.out.println("Generated Student ID is: "+myStudent.getId());
+		System.out.println("Generated Student ID is: "+myStudent1.getId());
+		System.out.println("Generated Student ID is: "+myStudent2.getId());
+		System.out.println("Generated Student ID is: "+myStudent3.getId());
 	}
 }
